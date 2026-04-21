@@ -76,5 +76,30 @@
             document.addEventListener('scroll', lazyLoad);
         });
     </script>
+    <style>
+    .desktop-menu {
+        display: block;
+    }
+    @media (max-width: 768px) {
+        .desktop-menu {
+            display: none;
+        }
+        .mobile-menu {
+            display: block;
+        }
+    }
+</style>
+
+<nav class="desktop-menu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/properties">Properties</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+    lazyLoad(); // Call once on load
+document.addEventListener('scroll', lazyLoad);
+window.addEventListener('resize', lazyLoad);
 </body>
 </html>
