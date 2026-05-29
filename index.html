@@ -711,6 +711,63 @@
       .lb-next { right: 24px; }
     }
   </style>
+
+  <!-- ── INLINE STYLES: weather widget & map ── -->
+  <style>
+    /* Google Map iframe */
+    .location-img iframe {
+      width: 100%; height: 100%;
+      border: none; display: block;
+    }
+
+    /* Weather card */
+    .weather-card {
+      margin-top: 28px;
+      background: white;
+      border-radius: var(--r-lg);
+      padding: 20px 22px;
+      border: 1px solid rgba(11,61,94,.1);
+      box-shadow: var(--sh-sm);
+    }
+    .weather-header {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .weather-loc {
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ink-60);
+    }
+    .weather-live {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--teal);
+    }
+    .weather-live::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--teal);
+      animation: live-pulse 2s ease-in-out infinite;
+    }
+    @keyframes live-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .4; transform: scale(.8); }
+    }
+    .weather-main { display: flex; align-items: center; gap: 18px; }
+    .weather-temp {
+      font-family: var(--ff-display);
+      font-size: 3rem; font-weight: 700;
+      color: var(--navy); line-height: 1;
+      white-space: nowrap;
+    }
+    .weather-unit { font-size: 1.4rem; }
+    .weather-details { display: flex; flex-direction: column; gap: 5px; }
+    .weather-desc { font-size: .9rem; font-weight: 500; color: var(--ink); }
+    .weather-meta { font-size: .78rem; color: var(--ink-60); }
+    .weather-loading { font-size: .85rem; color: var(--ink-30); font-style: italic; }
+  </style>
 </head>
 <body>
 
@@ -1187,9 +1244,32 @@
         <span class="dist-val">~20 miles</span>
       </li>
     </ul>
+
+    <!-- Live Weather -->
+    <div class="weather-card" id="weather-widget">
+      <div class="weather-header">
+        <span class="weather-loc">Indian Rocks/Shores · 33785</span>
+        <span class="weather-live">Live</span>
+      </div>
+      <div class="weather-main">
+        <div class="weather-temp"><span id="w-temp">--</span><span class="weather-unit">°F</span></div>
+        <div class="weather-details">
+          <div class="weather-desc" id="w-desc"><span class="weather-loading">Fetching weather…</span></div>
+          <div class="weather-meta" id="w-meta"></div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Google Map -->
   <div class="location-img">
-    <img src="unit36_location_1.avif" alt="Indian Shores location" loading="lazy" />
+    <iframe
+      src="https://maps.google.com/maps?q=Indian+Rocks+Beach,+FL+33785&t=m&z=13&ie=UTF8&output=embed"
+      title="Map of Indian Rocks/Shores, FL 33785"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
 </div>
 
@@ -1352,6 +1432,26 @@
     if (e.key === 'ArrowLeft')   lbGo(-1);
     if (e.key === 'ArrowRight')  lbGo(1);
   });
+
+  /* ── LIVE WEATHER (wttr.in, no API key required) ── */
+  (async function loadWeather() {
+    try {
+      const res  = await fetch('https://wttr.in/33785?format=j1');
+      const data = await res.json();
+      const cc   = data.current_condition[0];
+      document.getElementById('w-temp').textContent = cc.temp_F;
+      document.getElementById('w-desc').textContent = cc.weatherDesc[0].value;
+      document.getElementById('w-meta').textContent =
+        'Feels like ' + cc.FeelsLikeF + '°F · ' + cc.humidity + '% humidity · ' +
+        'Wind ' + cc.windspeedMiles + ' mph';
+    } catch (e) {
+      const card = document.getElementById('weather-widget');
+      if (card) {
+        document.getElementById('w-desc').textContent = 'Weather unavailable';
+        document.getElementById('w-meta').textContent = '';
+      }
+    }
+  })();
 </script>
 
 </body>
