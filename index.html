@@ -1449,17 +1449,32 @@
     if (e.key === 'ArrowRight')  lbGo(1);
   });
 
-  /* ── LIVE WEATHER (wttr.in, no API key required) ── */
+  /* ── LIVE WEATHER (Open-Meteo, no API key, exact property coordinates) ── */
   (async function loadWeather() {
+    const WMO = {
+      0:'Clear Sky', 1:'Mainly Clear', 2:'Partly Cloudy', 3:'Overcast',
+      45:'Foggy', 48:'Icy Fog',
+      51:'Light Drizzle', 53:'Drizzle', 55:'Heavy Drizzle',
+      61:'Light Rain', 63:'Rain', 65:'Heavy Rain',
+      71:'Light Snow', 73:'Snow', 75:'Heavy Snow', 77:'Snow Grains',
+      80:'Rain Showers', 81:'Rain Showers', 82:'Violent Showers',
+      85:'Snow Showers', 86:'Heavy Snow Showers',
+      95:'Thunderstorm', 96:'Thunderstorm', 99:'Severe Thunderstorm',
+    };
     try {
-      const res  = await fetch('https://wttr.in/33785?format=j1');
+      const url = 'https://api.open-meteo.com/v1/forecast' +
+        '?latitude=27.8833&longitude=-82.8482' +
+        '&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code' +
+        '&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York';
+      const res  = await fetch(url);
       const data = await res.json();
-      const cc   = data.current_condition[0];
-      document.getElementById('w-temp').textContent = cc.temp_F;
-      document.getElementById('w-desc').textContent = cc.weatherDesc[0].value;
+      const c    = data.current;
+      document.getElementById('w-temp').textContent = Math.round(c.temperature_2m);
+      document.getElementById('w-desc').textContent = WMO[c.weather_code] ?? 'Current Conditions';
       document.getElementById('w-meta').textContent =
-        'Feels like ' + cc.FeelsLikeF + '°F · ' + cc.humidity + '% humidity · ' +
-        'Wind ' + cc.windspeedMiles + ' mph';
+        'Feels like ' + Math.round(c.apparent_temperature) + '°F · ' +
+        c.relative_humidity_2m + '% humidity · Wind ' +
+        Math.round(c.wind_speed_10m) + ' mph';
     } catch (e) {
       const card = document.getElementById('weather-widget');
       if (card) {
