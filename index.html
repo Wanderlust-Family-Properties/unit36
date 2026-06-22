@@ -753,14 +753,30 @@
     }
     .evac-resource-item:hover { box-shadow: var(--sh-sm); border-color: var(--sky); }
     .evac-resource-item svg { flex-shrink: 0; color: var(--ocean); }
-    .evac-resource-placeholder {
-      grid-column: span 2;
-      display: flex; align-items: center; gap: 10px;
-      background: rgba(26,107,144,.06); border: 1.5px dashed var(--ocean);
-      border-radius: var(--r-md); padding: 14px 18px;
-      font-size: .83rem; color: var(--ocean); font-style: italic;
+    /* Alert Pinellas signup callout */
+    .evac-alert-pinellas {
+      display: flex; align-items: flex-start; gap: 20px;
+      background: var(--navy); border-radius: var(--r-lg);
+      padding: 24px 28px; margin-bottom: 24px; color: white;
     }
-    .evac-resource-placeholder svg { flex-shrink: 0; }
+    .evac-ap-icon {
+      width: 46px; height: 46px; flex-shrink: 0;
+      background: rgba(91,175,212,.2); border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--sky); margin-top: 1px;
+    }
+    .evac-ap-body { flex: 1; }
+    .evac-ap-body strong { font-size: .92rem; font-weight: 600; display: block; margin-bottom: 6px; }
+    .evac-ap-body p { font-size: .82rem; color: rgba(255,255,255,.68); line-height: 1.6; }
+    .evac-ap-btn {
+      display: inline-flex; align-items: center; white-space: nowrap;
+      align-self: center; flex-shrink: 0;
+      background: var(--sky); color: var(--navy) !important;
+      padding: 11px 22px; border-radius: var(--r-pill);
+      font-size: .8rem; font-weight: 700;
+      transition: background .2s, transform .2s;
+    }
+    .evac-ap-btn:hover { background: #82c4e0; transform: translateY(-1px); }
 
     /* ─────────────────────────────────────────
        SCROLL ANIMATIONS
@@ -831,7 +847,8 @@
       .evac-zone-wrap { flex-direction: column; text-align: center; gap: 20px; }
       .evac-zone-info p { max-width: 100%; }
       .evac-resources-grid { grid-template-columns: 1fr; }
-      .evac-resource-placeholder { grid-column: span 1; }
+      .evac-alert-pinellas { flex-direction: column; gap: 14px; }
+      .evac-ap-btn { align-self: flex-start; }
 
       .cta-trust { gap: 14px; }
 
@@ -1533,29 +1550,53 @@
 
   <!-- Official resources panel -->
   <div class="evac-resources fade-up">
-    <p class="evac-resources-label">Official Resources</p>
+
+    <!-- Alert Pinellas signup callout -->
+    <div class="evac-alert-pinellas">
+      <div class="evac-ap-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <div class="evac-ap-body">
+        <strong>Sign Up for Alert Pinellas — Free Emergency Notifications</strong>
+        <p>Alert Pinellas is Pinellas County's official notification system. Register to receive real-time hurricane watches, evacuation orders, and severe weather alerts by <strong>phone call, text, or email</strong> — geo-targeted to Indian Shores. You can add up to 5 locations and multiple contact numbers.</p>
+      </div>
+      <a href="https://www.myindianshores.com/2690/Receive-Emergency-Notifications" target="_blank" rel="noopener" class="evac-ap-btn">Sign Up Free →</a>
+    </div>
+
+    <p class="evac-resources-label">Indian Shores &amp; County Resources</p>
     <div class="evac-resources-grid">
-      <a href="https://pinellas.gov/emergency-management/" target="_blank" rel="noopener" class="evac-resource-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Pinellas County Emergency Management
+      <a href="https://www.myindianshores.com/2690/Receive-Emergency-Notifications" target="_blank" rel="noopener" class="evac-resource-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        Indian Shores — Receive Emergency Notifications
+      </a>
+      <a href="https://www.myindianshores.com/2438/Hurricane-and-Severe-Weather-Preparednes" target="_blank" rel="noopener" class="evac-resource-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+        Indian Shores — Hurricane &amp; Severe Weather
+      </a>
+      <a href="https://www.myindianshores.com/2688/Have-a-Plan" target="_blank" rel="noopener" class="evac-resource-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Indian Shores — Have a Plan
       </a>
       <a href="https://pinellas.gov/emergency-management/know-your-zone/" target="_blank" rel="noopener" class="evac-resource-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         Know Your Zone — Pinellas County
       </a>
+      <a href="https://pinellas.gov/emergency-management/" target="_blank" rel="noopener" class="evac-resource-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Pinellas County Emergency Management
+      </a>
       <a href="https://www.nhc.noaa.gov" target="_blank" rel="noopener" class="evac-resource-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         National Hurricane Center (NHC / NOAA)
       </a>
       <a href="https://fl511.com" target="_blank" rel="noopener" class="evac-resource-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         FL 511 — Real-Time Road &amp; Evacuation Info
       </a>
-      <!-- ⬇ Replace with the Indian Shores official evacuation URL when available -->
-      <div class="evac-resource-placeholder">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span><strong>Indian Shores Official Evacuation Page</strong> — link to be added</span>
-      </div>
+      <a href="https://www.myindianshores.com/AlertCenter.aspx" target="_blank" rel="noopener" class="evac-resource-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Indian Shores — Active Alerts &amp; Notices
+      </a>
     </div>
   </div>
 
