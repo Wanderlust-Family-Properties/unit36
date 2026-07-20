@@ -1,0 +1,132 @@
+{
+  ".claude/plugins/ponytail/hooks/ponytail-activate.js": {
+    "mtime": 1784586912.8737633,
+    "ast_hash": "47e95c1284023fdeeef4679c95008360",
+    "semantic_hash": "47e95c1284023fdeeef4679c95008360"
+  },
+  ".claude/plugins/ponytail/hooks/ponytail-config.js": {
+    "mtime": 1784586912.8759756,
+    "ast_hash": "0106da66b6e4c89e348adfeec3458353",
+    "semantic_hash": "0106da66b6e4c89e348adfeec3458353"
+  },
+  ".claude/plugins/ponytail/hooks/ponytail-instructions.js": {
+    "mtime": 1784586912.8759756,
+    "ast_hash": "6bc7902812c09682194f6d7e6c587f6e",
+    "semantic_hash": "6bc7902812c09682194f6d7e6c587f6e"
+  },
+  ".claude/plugins/ponytail/hooks/ponytail-mode-tracker.js": {
+    "mtime": 1784586912.8759756,
+    "ast_hash": "2a4c8b864bbeb973cffbc8ecd4fa5875",
+    "semantic_hash": "2a4c8b864bbeb973cffbc8ecd4fa5875"
+  },
+  ".claude/plugins/ponytail/hooks/ponytail-runtime.js": {
+    "mtime": 1784586912.8759756,
+    "ast_hash": "4c2f374d8b6f705de3aa685c39b6ac28",
+    "semantic_hash": "4c2f374d8b6f705de3aa685c39b6ac28"
+  },
+  ".claude/plugins/ponytail/hooks/ponytail-statusline.sh": {
+    "mtime": 1784586912.8759756,
+    "ast_hash": "f1e522f1adb6aaab8698cff727d74ffd",
+    "semantic_hash": "f1e522f1adb6aaab8698cff727d74ffd"
+  },
+  ".claude/settings.json": {
+    "mtime": 1784586979.9132707,
+    "ast_hash": "8e4dc85463c69002db66a99af4c2bd86",
+    "semantic_hash": "8e4dc85463c69002db66a99af4c2bd86"
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1784586979.9123168,
+    "ast_hash": "9b31786b637be3c13978bec4c2330752",
+    "semantic_hash": "9b31786b637be3c13978bec4c2330752"
+  },
+  ".claude/plugins/ponytail/skills/ponytail/SKILL.md": {
+    "mtime": 1784586912.8786287,
+    "ast_hash": "d8efb23f9f0c9ac549d9d24ee3ac534c",
+    "semantic_hash": "d8efb23f9f0c9ac549d9d24ee3ac534c"
+  },
+  ".claude/skills/graphify/SKILL.md": {
+    "mtime": 1784586979.910965,
+    "ast_hash": "676310b3fa55aacdb350515228c8b0ec",
+    "semantic_hash": "676310b3fa55aacdb350515228c8b0ec"
+  },
+  ".claude/skills/graphify/references/add-watch.md": {
+    "mtime": 1784586968.2891066,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": "d59d027fe449f06aa03905a01184e779"
+  },
+  ".claude/skills/graphify/references/exports.md": {
+    "mtime": 1784586968.2891066,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": "9da2a2152e60a22f07f05fed5158f287"
+  },
+  ".claude/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": "42fef56a01698118f7fd722acdadea34"
+  },
+  ".claude/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
+  },
+  ".claude/skills/graphify/references/hooks.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
+  },
+  ".claude/skills/graphify/references/query.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": "3c46f8ad006874260614ed8657d02307"
+  },
+  ".claude/skills/graphify/references/transcribe.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": "67b6a5fa6c0974e18f60db9f8932fbd8"
+  },
+  ".claude/skills/graphify/references/update.md": {
+    "mtime": 1784586968.2931066,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": "9378bd03d56baaf78bd738ab3848f142"
+  },
+  ".claude/skills/ponytail-audit/SKILL.md": {
+    "mtime": 1784586912.880364,
+    "ast_hash": "2a757432defa9d63639a3aca3bbbf23a",
+    "semantic_hash": "2a757432defa9d63639a3aca3bbbf23a"
+  },
+  ".claude/skills/ponytail-debt/SKILL.md": {
+    "mtime": 1784586912.880364,
+    "ast_hash": "33f49652fe513cf08082e9bcf8e2ecf2",
+    "semantic_hash": "33f49652fe513cf08082e9bcf8e2ecf2"
+  },
+  ".claude/skills/ponytail-gain/SKILL.md": {
+    "mtime": 1784586912.880364,
+    "ast_hash": "e0090358fafc0a4b01716b88399e8405",
+    "semantic_hash": "e0090358fafc0a4b01716b88399e8405"
+  },
+  ".claude/skills/ponytail-help/SKILL.md": {
+    "mtime": 1784586912.880364,
+    "ast_hash": "b47db517327d05594bc07aa6d7003526",
+    "semantic_hash": "b47db517327d05594bc07aa6d7003526"
+  },
+  ".claude/skills/ponytail-review/SKILL.md": {
+    "mtime": 1784586912.880364,
+    "ast_hash": "438e2414888145bc0108fa63f64314fd",
+    "semantic_hash": "438e2414888145bc0108fa63f64314fd"
+  },
+  ".claude/skills/ponytail/SKILL.md": {
+    "mtime": 1784586912.8811061,
+    "ast_hash": "d8efb23f9f0c9ac549d9d24ee3ac534c",
+    "semantic_hash": "d8efb23f9f0c9ac549d9d24ee3ac534c"
+  },
+  "CLAUDE.md": {
+    "mtime": 1784586979.9126031,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
+  },
+  "index.html": {
+    "mtime": 1784586912.8811061,
+    "ast_hash": "66885503362603cd117c1e5e2373c3e5",
+    "semantic_hash": "66885503362603cd117c1e5e2373c3e5"
+  }
+}
